@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FlyMission, Fuel
+from .models import FlyMission, Fuel, Equipment
 
 # En este archivo pueden gestionar los modelos en el panel de administracion
 # Al refistrarlos aqui se generan automaticamente los cruds
@@ -8,6 +8,11 @@ from .models import FlyMission, Fuel
 # Register your models here.
 @admin.register(FlyMission)
 class FlyMissionAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Equipment)
+class EquipmentAdmin(admin.ModelAdmin):
     pass
 
 

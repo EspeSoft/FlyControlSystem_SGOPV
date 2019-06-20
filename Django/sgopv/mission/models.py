@@ -15,14 +15,21 @@ class Fuel(models.Model):
     def __str__(self):
         return self.brand
 
-# CLase de ejemplo para Relaciones Many to Many
-# class Categories(models.Model):
-#     name = models.CharField(verbose_name="Categoria",  max_length=100)
+
+class Equipment(models.Model):
+    name = models.CharField(verbose_name="Nombre", max_length=30)
+    quantity = models.IntegerField(verbose_name="Cantidad")
+    detaill = models.TextField(verbose_name="Detalle")
+    material = models.CharField(verbose_name="Material", max_length=30)
+
+    class Meta:
+        verbose_name = 'Equipamiento'
+        verbose_name_plural = 'Equipamiento'
 
 
 class FlyMission(models.Model):
     fuel = models.ForeignKey(Fuel, verbose_name="Gasolina", on_delete=models.DO_NOTHING, null=True)
-    # categories = models.ManyToManyField(Categories, related_name="categories", verbose_name="Categorias") Ejemplo Many to Many
+    equipment = models.ManyToManyField(Equipment, verbose_name="Equipamiento", related_name="equipments")
     distance = models.FloatField(verbose_name="Distancia")
     time = models.TimeField(verbose_name="Tiempo")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
