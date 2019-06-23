@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
-from account.models import Profile, Pilot
+from account.models import Profile, Pilot, Instructor
 
 
 class ProfileInline(admin.StackedInline):
@@ -20,4 +20,9 @@ admin.site.register(User, UserAdmin)
 
 @admin.register(Pilot)
 class PilotAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Instructor)
+class InstructorAdmin(admin.ModelAdmin):
     pass

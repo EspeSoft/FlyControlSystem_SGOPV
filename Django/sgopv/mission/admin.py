@@ -1,18 +1,43 @@
 from django.contrib import admin
-from .models import FlyMission, Fuel, Equipment
+from .models import FlyMission, Fuel, Equipment, Plane, Planning, Route, Origin, Destination
 
 # En este archivo pueden gestionar los modelos en el panel de administracion
 # Al refistrarlos aqui se generan automaticamente los cruds
 
 
 # Register your models here.
-@admin.register(FlyMission)
-class FlyMissionAdmin(admin.ModelAdmin):
+@admin.register(Equipment)
+class EquipmentAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Equipment)
-class EquipmentAdmin(admin.ModelAdmin):
+@admin.register(Route)
+class RouteAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Plane)
+class PlaneAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Origin)
+class OriginAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Destination)
+class DestinationAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Planning)
+class PlanningAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(FlyMission)
+class FlyMissionAdmin(admin.ModelAdmin):
     pass
 
 
